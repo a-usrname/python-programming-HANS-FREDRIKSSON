@@ -1,2 +1,2 @@
 # python-programming-HANS-FREDRIKSSON
-programming in python for ITHS
+# **programming** in *python*, *AI24*, *ITHS*
