@@ -52,4 +52,4 @@ print(f"The distance is around {distance} length units.")
 # Calculate the distance btw the points P1: (2,1,4) and P2: (3,1,0).
 
 distance = round(math.sqrt(  (2-3)**2 + (1-1)**2 + (4-0)**2 ), 2)
-print(f"The 3D distance is around: {distance}")
+print(f"The 3D distance is around: {distance} l.u.")
