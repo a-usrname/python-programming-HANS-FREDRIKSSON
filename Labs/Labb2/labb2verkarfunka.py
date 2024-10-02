@@ -9,7 +9,7 @@ import numpy as np
 # Read the original data file (Pichu and Pikachu data), skipping the first line
 df = pd.read_csv('C:\Lärakod\ITHS\Python\PythonKursen\Lektioner\REPOS\python-programming-HANS-FREDRIKSSON\Labs\Labb2\datapoints.txt', skiprows=1, header=None)
 
-# Assign column names: 'width', 'height', 'label'
+# Assign column names to the data frame: 'width', 'height', 'label'
 df.columns = ['width', 'height', 'label']
 
 # Create a test dataset (could be loaded from a file, here we define it manually)
@@ -18,30 +18,36 @@ test_data = {
     'height': [32, 31.5, 34, 34]  # Test data points' height
 }
 
-
 test_df = pd.DataFrame(test_data)
 
-
 #user input for another test point-----------------------------------------------------------
-#obs lägg till try / exception sth så inte user kan mata in fel
 
+while True:    
+            
+    try:
+        user_width = float(input("mata in bredd(mellan 15.5-28.5): "))
+        user_height = float(input("mata in höjd(mellan 27.5-38.5): "))
+        #user_width = float(user_width)
+        #user_height = float(user_height)     
+        
+        if  (user_width <= 15.5 or user_width >= 28.5):
+            print(f"båda måste vara innanför intervallen, testa igen")
+            continue    #go to next iteration of the loop, startar ett varv till
 
+        if (user_height <= 27.5 or user_height >= 38.5):
+            print(f"båda måste vara innanför intervallen, testa igen")
+            continue    #go to next iteration of the loop, startar ett varv till
 
-while True:
-    Try:
-        user_width = int(input("mata in bredd mellan(): "))
-        user_height = int(input("mata in höjd: "))
+        break
 
+    except ValueError:
+        # If the input is not an integer, handle the exception
+        print("bara siffror, tack")
 
-    Except:
+#-------------------------------------------------------------------------------------------
 
-
-    break
-
-
-
-user_width = float(user_width)
-user_height = float(user_height)
+#user_width = float(user_width)
+#user_height = float(user_height)
 
 user_test_data = {
     'width': [user_width],  # User data points' width
@@ -108,14 +114,14 @@ test_pichu = test_df[test_df['label'] == 0]
 test_not_pichu = test_df[test_df['label'] == 1]
 
 plt.scatter(test_pichu['width'], test_pichu['height'], color='green', label='Test Pichu')
-plt.scatter(test_not_pichu['width'], test_not_pichu['height'], color='red', label='Test Pikachu')
+plt.scatter(test_not_pichu['width'], test_not_pichu['height'], color='red', label='Test Not Pichu')
 
 # Scatter plot for USER test data points (classified as Pichu or Pikachu)-------------------------
 test_pichu = user_df[user_df['label'] == 0]
 test_not_pichu = user_df[user_df['label'] == 1]
 
 plt.scatter(test_pichu['width'], test_pichu['height'], color='black', label='User Test Pichu')
-plt.scatter(test_not_pichu['width'], test_not_pichu['height'], color='brown', label='User Test Pikachu')
+plt.scatter(test_not_pichu['width'], test_not_pichu['height'], color='brown', label='User Test Not Pichu')
 
 #--------------------------------------------------------------------------------------------
 
@@ -139,3 +145,7 @@ print(test_df)
 
 
 #                                                              - Uppgift 2 -
+# use KNN to get better classification, 10 data points instead of 1, base on majority vote
+
+
+
