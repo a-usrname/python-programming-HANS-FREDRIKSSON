@@ -125,7 +125,7 @@ plt.scatter(test_not_pichu['width'], test_not_pichu['height'], color='black', ma
 # Adding labels and title to the Scatter plot
 plt.xlabel('Width')
 plt.ylabel('Height')
-plt.title(f'Scatter plot of Pichu, Pikachu, and Test Points (k={k})')
+plt.title(f'Scatter plot of Pichu, Pikachu and \n two classification methods of the User Test Point')
 plt.legend()
 
 # Print test data classification
