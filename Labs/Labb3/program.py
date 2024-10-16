@@ -2,12 +2,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+#CLEAN UP THE CODE AND COMMENTS BEFORE
 
 # from chatgpt
 
 
 # Import the point_position function from position_utils.py
-from c_function import point_position
+from function import point_position
 
 # Load the data from the CSV file
 df = pd.read_csv('unlabelled_data.csv')

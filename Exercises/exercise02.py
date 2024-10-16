@@ -193,7 +193,27 @@ def game():
 a_random_number()
 game()
 
-# 5.
+# 5. Check convergence(**)
+# use a while statement to compute the following sums
+# a)
+
+# initialize variables
+sum_value = 0
+n = 0
+tolerance = 1e-6    #define a small tolerance for convergence
+current_term = 1    # this corresponds to 1/(2^0)
+
+# using a while loop to compute the sum
+while current_term > tolerance:
+    sum_value += current_term
+    n += 1
+    current_term = 1/(2**n) # update current term to 1/(2^n)
+
+# display results
+print(f"Sum after {n} terms: {sum_value}")
+print(f"Expected value (limit as n approaches infinity): 2")
+
+# b)
 
 
     

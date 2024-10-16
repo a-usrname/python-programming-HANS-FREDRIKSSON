@@ -1,4 +1,3 @@
-frukter = ["jordgubbe", "vindruva", "grape"]
-godfrukt = frukter[2]
-print(godfrukt[-1])
-print(godfrukt)
+import numpy as np
+import matplotlib.pyplot as plt
+
