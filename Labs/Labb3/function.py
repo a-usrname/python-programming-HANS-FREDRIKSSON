@@ -1,18 +1,7 @@
-#chatgpt (havent changed it)
+#chatgpt (havent changed it, except for return 1 and 0)
 # This file contains the function to check if a point is above/right or below/left of the line
 
 def point_position(x, y, k, m):
-    """
-    Function to determine if a point (x, y) is above/right, below/left, or on the line y = kx + m.
-    Args:
-    x (float): The x-coordinate of the point.
-    y (float): The y-coordinate of the point.
-    k (float): The slope of the line.
-    m (float): The y-intercept of the line.
-
-    Returns:
-    str: A string indicating the position of the point relative to the line.
-    """
     # Calculate the predicted y value from the line equation
     predicted_y = k * x + m
     
@@ -23,9 +12,6 @@ def point_position(x, y, k, m):
         return 1
     
     else:
+        #if not "above/right"
         return 0
-    #elif y < predicted_y:
-        #return "below/left"
-        #return 0
-    #else:
-        #return "on the line"
+
