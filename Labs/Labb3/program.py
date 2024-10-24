@@ -34,7 +34,7 @@ below_left = df[df['position'] == 0]
 plt.scatter(above_right['x'], above_right['y'], color='blue', label='above/right (1)')
 plt.scatter(below_left['x'], below_left['y'], color='yellow', label='below/left (0)')
 
-# Plot the best-fit line
+# Plot the line
 plt.plot(df['x'], k * df['x'] + m, color='red', label=f'Best fit line: y = {k:.2f}x + {m:.2f}')
 
 # Add labels, title, and legend

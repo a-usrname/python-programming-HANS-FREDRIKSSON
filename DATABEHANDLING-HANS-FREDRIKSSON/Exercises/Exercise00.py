@@ -16,7 +16,4 @@ print(cities_in_Sweden_df)
 # Select only the row that contains Göteborg. Do this by using the name Göteborg.
 #refer to the named index: some error       loc = locate
 print(cities_in_Sweden_df.loc[3]) #funkar
-print(cities_in_Sweden_df.loc["Göteborg"]) #funkar ej
-
-
-
+#print(cities_in_Sweden_df.loc["Göteborg"]) #funkar ej ? key error
