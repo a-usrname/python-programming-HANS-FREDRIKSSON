@@ -3,12 +3,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 from collections import Counter
 
+# Raphael says: Yes, this looks very much like GPT generated code. It's terrible.
+
 # got code from chatgpt, then modified it with other variable names and etc
 # Read the original data file (Pichu and Pikachu data), skipping the first line
 # and assigned column names
 df = pd.read_csv('datapoints.txt', skiprows=1, header=None)
 df.columns = ['width', 'height', 'label']
 
+# raphael says: There is no reason to limit input to these intervals.
 # user input for test point with while loop with try/except to prevent wrong input from user
 while True:          
     try:
@@ -27,24 +30,31 @@ while True:
         # Om user annat än float
         print("bara siffror, tack")
 
+# Why do the below? This part is pretty much a GPT hallucination.
 # test data points from user input
 test_data_from_user_input = {
     'width': [user_width],  # User data points' width
     'height': [user_height]  # User Test data points' height
 }
 
+# Raphael Says: There is no point in creating a dataframe from a dict with two values.
+
 # create data frame from user input
 user_input_df = pd.DataFrame(test_data_from_user_input)
+
+# Below is more nonsense from GPT.
 
 # copy user data frame to KNN data frame to be used for KNN test  
 test_df_knn = user_input_df
 
+# This function looks ok, but "row" isn't a good variable name for a 2d-point.
 # Function to calculate Euclidean distance
 # (between original data points and user test data point)
 # row1 first data point, row 2 second data point
 def euclidean_distance(row1, row2):
     return np.sqrt((row1['width'] - row2['width'])**2 + (row1['height'] - row2['height'])**2)
 
+# Raphael says: This should definitely be a function
 # --------------------------------- Task 1 ---------------------
 # Classify user test data points based on nearest point in the original DataFrame
 classifications = []
@@ -61,7 +71,7 @@ for i, test_point in user_input_df.iterrows():
 # Add classification results to the user input data frame
 user_input_df['label'] = classifications
 #----------------------------------------------------------------
-
+# Raphael says; The previous task should have used the below function with k = 1
 # --------------------------------- Task 2 ---------------------
 # Use KNN to get better classification (according to chatgpt), 10 data points instead of 1, based on majority vote
 # K-Nearest Neighbors function (KNN)      (function from chatgpt did not modify)    
@@ -81,9 +91,12 @@ def knn_classify(test_point, k):
 
     return majority_label
 
+# Raphael says: This should be set as you call the knn_classify function.
+
 # KNN choose k value (for how many neighbors to compare with)
 k = 10
 
+# Raphael says: This should be a function
 #Classify each point based on KNN
 classifications =[]
 for i, test_point in test_df_knn.iterrows():
